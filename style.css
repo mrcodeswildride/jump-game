@@ -1,0 +1,49 @@
+body {
+  background-color: beige;
+}
+
+p {
+  font-size: 24px;
+}
+
+input,
+button {
+  padding: 5px;
+}
+
+input {
+  width: 150px;
+}
+
+#box {
+  font-size: 0;
+  margin-top: 30px;
+}
+
+.square {
+  display: inline-block;
+  vertical-align: top;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.square:last-child {
+  font-size: 16px;
+  margin-right: 0;
+}
+
+.highlighted {
+  background-color: lightblue;
+}
+
+#messageParagraph {
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
