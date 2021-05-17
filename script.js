@@ -11,37 +11,27 @@ number.focus()
 function generate() {
   let numberValue = number.value.trim()
 
-  if (numberValue != `` && !isNaN(numberValue)) {
-    if (numberValue < 1 || numberValue > 25) {
-      box.innerHTML = ``
-      messageParagraph.innerHTML = `Number of squares must be between 1 and 25.`
-    }
-    else {
-      box.innerHTML = ``
-      messageParagraph.innerHTML = ``
+  if (numberValue < 1 || numberValue > 25) {
+    box.innerHTML = ``
+    messageParagraph.innerHTML = `Number of squares must be between 1 and 25.`
+  } else {
+    box.innerHTML = ``
+    messageParagraph.innerHTML = ``
 
-      for (let i = 0; i < numberValue; i++) {
-        let square = document.createElement(`div`)
-        square.classList.add(`square`)
+    for (let i = 0; i < numberValue; i++) {
+      let square = document.createElement(`div`)
+      square.classList.add(`square`)
 
-        if (i < numberValue - 1) {
-          square.innerHTML = Math.floor(Math.random() * 4)
-        }
-        else {
-          square.innerHTML = `End`
-        }
-
-        box.appendChild(square)
+      if (i < numberValue - 1) {
+        square.innerHTML = Math.floor(Math.random() * 4)
+      } else {
+        square.innerHTML = `End`
       }
 
-      findSolution()
+      box.appendChild(square)
     }
-  }
-}
 
-function keyPressed(event) {
-  if (event.keyCode == 13) {
-    generate()
+    findSolution()
   }
 }
 
@@ -54,8 +44,7 @@ function findSolution() {
     }
 
     messageParagraph.innerHTML = `Solution highlighted in blue`
-  }
-  else {
+  } else {
     messageParagraph.innerHTML = `No solution`
   }
 }
@@ -84,4 +73,10 @@ function jump(toIndex, path) {
   }
 
   return null
+}
+
+function keyPressed(event) {
+  if (event.keyCode == 13) {
+    generate()
+  }
 }
